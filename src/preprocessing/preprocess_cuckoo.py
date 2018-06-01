@@ -15,7 +15,7 @@ def find_api_call_in_cuckoo(results):
         pass
 
     if len(api_call_list) != 100:
-        api_call_list.extend(' ' * (100 - len(api_call_list)))
+        api_call_list.extend(['nop'] * (100 - len(api_call_list)))
 
     return api_call_list
 
