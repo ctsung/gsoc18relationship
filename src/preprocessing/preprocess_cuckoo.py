@@ -35,4 +35,3 @@ cuckoo_df.write.format("org.apache.spark.sql.cassandra").mode('append').options(
 cuckoo_df = cuckoo_objects.toDF()
 cuckoo_df = cuckoo_df.withColumnRenamed("_1", "sha256").withColumnRenamed("_2", "features_cuckoo").withColumnRenamed("_3", "label")
 cuckoo_df.write.format("org.apache.spark.sql.cassandra").mode('append').options(table=PREPROCESSING_OBJECTS, keyspace=KEYSPACE).save()
-

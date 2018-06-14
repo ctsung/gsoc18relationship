@@ -39,4 +39,3 @@ objdump_df.write.format("org.apache.spark.sql.cassandra").mode('append').options
 objdump_df = objdump_objects.toDF()
 objdump_df = objdump_df.withColumnRenamed("_1", "sha256").withColumnRenamed("_2", "features_objdump").withColumnRenamed("_3", "label")
 objdump_df.write.format("org.apache.spark.sql.cassandra").mode('append').options(table=PREPROCESSING_OBJECTS, keyspace=KEYSPACE).save()
-
