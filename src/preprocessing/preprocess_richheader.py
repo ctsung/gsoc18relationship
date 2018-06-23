@@ -31,4 +31,3 @@ richheader_df.write.format("org.apache.spark.sql.cassandra").mode('append').opti
 richheader_df = richheader_objects.toDF()
 richheader_df = richheader_df.withColumnRenamed("_1", "sha256").withColumnRenamed("_2", "features_richheader").withColumnRenamed("_3", "label")
 richheader_df.write.format("org.apache.spark.sql.cassandra").mode('append').options(table=PREPROCESSING_OBJECTS, keyspace=KEYSPACE).save()
-

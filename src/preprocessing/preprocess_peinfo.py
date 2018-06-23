@@ -42,4 +42,3 @@ peinfo_df.write.format("org.apache.spark.sql.cassandra").mode('append').options(
 peinfo_df = peinfo_objects.toDF()
 peinfo_df = peinfo_df.withColumnRenamed("_1", "sha256").withColumnRenamed("_2", "features_peinfo").withColumnRenamed("_3", "label")
 peinfo_df.write.format("org.apache.spark.sql.cassandra").mode('append').options(table=PREPROCESSING_OBJECTS, keyspace=KEYSPACE).save()
-
